@@ -1,0 +1,15 @@
+services:
+  data-spletni:
+    app: data-spletni-app # Specify app name. Defaults to service name. This is used to aggregate services that belongs to the same app.
+    version: v0 # Specify the version of app this service represents. Defaults to v0. Displayed as app@version, unless version is v0 where it will be omitted.
+    scale: 1 # Specify scale of the service, defaults to 1. Use this to have service come up with the specified number of pods.
+    build: # Setting build parameters. Set if you want to build image from source
+      repo: https://github.com/data-spletni/data-spletni-gen # Git repository to build. Required
+      branch: master # Git repository branch. Required
+      dockerfile: Dockerfile # The name of Dockerfile to look for.  This is the full path relative to the repo root. Defaults to `Dockerfile`.
+    ports: # Container ports, format: `$(servicePort:)containerPort/protocol`. Required if user wants to expose service through gateway
+    - 80:80/http,web # Service port 8080 will be mapped to container port 80 with protocol http, named `web`
+    hostAliases: # Hostname alias
+      - ip: 127.0.0.1
+        hostnames:
+        - data.spletni.io
