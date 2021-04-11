@@ -1,7 +1,5 @@
-# scalalaz-gen #
+# data-spletni-gen #
 
-[![Build Status](https://api.travis-ci.org/scalalaz-podcast/scalalaz-gen.svg)](http://travis-ci.org/scalalaz-podcast/scalalaz-gen)
-[![Discord Server](https://img.shields.io/discord/632692119185653770)](https://discord.gg/RnugmrU)
 
 Welcome to scalalaz-gen!
 
