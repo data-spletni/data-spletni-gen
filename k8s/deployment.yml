@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: data-spletni
+spec:
+  replicas: 1
+  revisionHistoryLimit: 3
+  selector:
+    matchLabels:
+      app: data-spletni
+  template:
+    metadata:
+      labels:
+        app: data-spletni
+    spec:
+      containers:
+        - image: reireirei/data-spletni
+          name: data-spletni
+          ports:
+            - containerPort: 80
